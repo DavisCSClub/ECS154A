@@ -284,6 +284,57 @@ A given address is partitioned into two components: Tag and offset. The reason w
 	\end{tabular}
 \end{table}
 
+\subsection{Set Associative}
+
+Set associative caching is a hybrid between direct-mapped and fully associative. A given address is partitioned into three components: Tag, set number, and offset. What makes set associative different from direct-mapped caching is that a given address will access a specific set of cache lines instead of a single cache line. Within that set of cache lines, it will perform a linear search like the fully associative cache. The tag and offset perform the same as the direct-mapped cache and fully associative cache. \textbf{Important terminology:} N-way associative cache means that there are N cache lines per set. This is also known as the associativity.
+
+\subsubsection{Format}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| c | c | c|}
+		\hline
+		Tag			&		Set Number	&	 Offset\\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsubsection{Example}
+
+\textbf{A CPU is using 64-bit addresses and is byte-addressable. It also uses a 3-way set associative cache with a cache size of 98,304 bytes and 32 sets. Find the following: Number of lines per set, size of each set, size of cache line, number of cache lines, bit width of offset, bit width of set number, bit width of tag, and partition sizes and bit ranges.}
+
+\[
+	\text{Number of Lines per Set} = 3 \text{ (Given)}
+\]
+\begin{eqnarray*}
+	\text{Size(Set)} &=& \text{Size(Cache)} / \text{Number of Sets}\\
+		&=& 98304 / 32\\
+		&=& 3072 \text{ bytes}
+\end{eqnarray*}
+\begin{eqnarray*}
+	\text{Size(Cache Line)} &=& \text{Size(Set)} / \text{Number of lines per set}\\
+	&=& 11 \text{ bits} - 3 \text{ bits}\\
+	&=& 8 \text{ bits}
+\end{eqnarray*}
+\begin{eqnarray*}
+	\text{Number of Cache Lines} &=& \text{Size(Cache)} / \text{Size(Cache Line)}\\
+	&=& 128 \text{ bytes} / 8 \text{ bytes}\\
+	&=& 16 \text{ Cache Lines}
+\end{eqnarray*}
+
+\begin{table}[H]
+	\centering
+	\caption*{Format Partition Sizes and Bit Range}
+	\begin{tabular}{| c | c | c |}
+		\hline
+		&	Tag		&	Offset\\
+		\hline
+		Size		&	8 bits		&	3 bits\\
+		\hline
+		Bit Range	&	Bits 3-10	&	Bits 0-2\\
+		\hline
+	\end{tabular}
+\end{table}
 
 \section{Virtual Memory}
 
