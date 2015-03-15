@@ -48,5 +48,8 @@
 \contentsline {subsection}{\numberline {6.5}Cache Properties}{12}
 \contentsline {subsection}{\numberline {6.6}Advance Caches}{12}
 \contentsline {section}{\numberline {7}Virtual Memory}{12}
-\contentsline {section}{\numberline {8}Multi-Cycle CPU Design}{12}
-\contentsline {section}{\numberline {9}Pipeline CPU Design}{12}
+\contentsline {subsection}{\numberline {7.1}Virtual Address Format}{12}
+\contentsline {subsection}{\numberline {7.2}Page Table Entry Format}{12}
+\contentsline {subsection}{\numberline {7.3}Example}{13}
+\contentsline {section}{\numberline {8}Multi-Cycle CPU Design}{13}
+\contentsline {section}{\numberline {9}Pipeline CPU Design}{13}
