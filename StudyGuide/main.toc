@@ -32,40 +32,47 @@
 \contentsline {subsection}{\numberline {4.2}Flip Flops}{9}
 \contentsline {subsection}{\numberline {4.3}Registers and Counters}{9}
 \contentsline {subsection}{\numberline {4.4}Designing Sequential Logic Circuits}{9}
-\contentsline {section}{\numberline {5}Single Cycle CPU Design}{9}
-\contentsline {section}{\numberline {6}Cache}{9}
-\contentsline {subsection}{\numberline {6.1}Memory Hierarchy}{9}
-\contentsline {subsection}{\numberline {6.2}Direct Mapped Cache}{9}
-\contentsline {subsubsection}{\numberline {6.2.1}Format}{10}
-\contentsline {subsubsection}{\numberline {6.2.2}Example}{10}
-\contentsline {subsection}{\numberline {6.3}Fully Associative}{11}
-\contentsline {subsubsection}{\numberline {6.3.1}Format}{11}
-\contentsline {subsubsection}{\numberline {6.3.2}Example}{11}
-\contentsline {subsection}{\numberline {6.4}Set Associative}{11}
-\contentsline {subsubsection}{\numberline {6.4.1}Format}{12}
-\contentsline {subsubsection}{\numberline {6.4.2}Example}{12}
-\contentsline {subsubsection}{\numberline {6.4.3}Associativity Remarks}{13}
-\contentsline {subsection}{\numberline {6.5}Replacement Strategies}{13}
-\contentsline {subsubsection}{\numberline {6.5.1}Least Recently Used (LRU)}{13}
-\contentsline {subsubsection}{\numberline {6.5.2}First-In, First-Out (FIFO)}{13}
-\contentsline {subsubsection}{\numberline {6.5.3}Most Recently Used (MRU)}{13}
-\contentsline {subsection}{\numberline {6.6}Access Types}{13}
-\contentsline {subsubsection}{\numberline {6.6.1}Physically Addressed Cache}{14}
-\contentsline {subsubsection}{\numberline {6.6.2}Virtually Addressed Cache}{14}
-\contentsline {subsection}{\numberline {6.7}Cache Miss Classification}{15}
-\contentsline {subsubsection}{\numberline {6.7.1}Compulsory}{15}
-\contentsline {subsubsection}{\numberline {6.7.2}Capacity}{15}
-\contentsline {subsubsection}{\numberline {6.7.3}Conflict}{15}
-\contentsline {subsubsection}{\numberline {6.7.4}Coherence}{15}
-\contentsline {subsection}{\numberline {6.8}Fundamental Cache Parameters}{15}
-\contentsline {subsubsection}{\numberline {6.8.1}Cache Size}{15}
-\contentsline {subsubsection}{\numberline {6.8.2}Block Size}{15}
-\contentsline {subsubsection}{\numberline {6.8.3}Associativity}{15}
-\contentsline {subsubsection}{\numberline {6.8.4}Access Type}{15}
-\contentsline {subsection}{\numberline {6.9}Advance Caches}{16}
-\contentsline {section}{\numberline {7}Virtual Memory}{16}
-\contentsline {subsection}{\numberline {7.1}Virtual Address Format}{16}
-\contentsline {subsection}{\numberline {7.2}Page Table Entry Format}{16}
-\contentsline {subsection}{\numberline {7.3}Example}{16}
-\contentsline {section}{\numberline {8}Multi-Cycle CPU Design}{17}
-\contentsline {section}{\numberline {9}Pipeline CPU Design}{17}
+\contentsline {subsubsection}{\numberline {4.4.1}Steps}{9}
+\contentsline {subsection}{\numberline {4.5}Example}{9}
+\contentsline {subsubsection}{\numberline {4.5.1}State Transition Diagram}{9}
+\contentsline {subsubsection}{\numberline {4.5.2}State Minimization}{10}
+\contentsline {subsubsection}{\numberline {4.5.3}Binary Code Assignment}{10}
+\contentsline {subsubsection}{\numberline {4.5.4}State Transition Table}{11}
+\contentsline {subsubsection}{\numberline {4.5.5}Boolean Algebra Minimization}{11}
+\contentsline {section}{\numberline {5}Single Cycle CPU Design}{12}
+\contentsline {section}{\numberline {6}Cache}{12}
+\contentsline {subsection}{\numberline {6.1}Memory Hierarchy}{12}
+\contentsline {subsection}{\numberline {6.2}Direct Mapped Cache}{13}
+\contentsline {subsubsection}{\numberline {6.2.1}Format}{13}
+\contentsline {subsubsection}{\numberline {6.2.2}Example}{13}
+\contentsline {subsection}{\numberline {6.3}Fully Associative}{14}
+\contentsline {subsubsection}{\numberline {6.3.1}Format}{14}
+\contentsline {subsubsection}{\numberline {6.3.2}Example}{14}
+\contentsline {subsection}{\numberline {6.4}Set Associative}{15}
+\contentsline {subsubsection}{\numberline {6.4.1}Format}{15}
+\contentsline {subsubsection}{\numberline {6.4.2}Example}{15}
+\contentsline {subsubsection}{\numberline {6.4.3}Associativity Remarks}{16}
+\contentsline {subsection}{\numberline {6.5}Replacement Strategies}{16}
+\contentsline {subsubsection}{\numberline {6.5.1}Least Recently Used (LRU)}{16}
+\contentsline {subsubsection}{\numberline {6.5.2}First-In, First-Out (FIFO)}{16}
+\contentsline {subsubsection}{\numberline {6.5.3}Most Recently Used (MRU)}{17}
+\contentsline {subsection}{\numberline {6.6}Access Types}{17}
+\contentsline {subsubsection}{\numberline {6.6.1}Physically Addressed Cache}{17}
+\contentsline {subsubsection}{\numberline {6.6.2}Virtually Addressed Cache}{17}
+\contentsline {subsection}{\numberline {6.7}Cache Miss Classification}{18}
+\contentsline {subsubsection}{\numberline {6.7.1}Compulsory}{18}
+\contentsline {subsubsection}{\numberline {6.7.2}Capacity}{18}
+\contentsline {subsubsection}{\numberline {6.7.3}Conflict}{18}
+\contentsline {subsubsection}{\numberline {6.7.4}Coherence}{18}
+\contentsline {subsection}{\numberline {6.8}Fundamental Cache Parameters}{18}
+\contentsline {subsubsection}{\numberline {6.8.1}Cache Size}{18}
+\contentsline {subsubsection}{\numberline {6.8.2}Block Size}{18}
+\contentsline {subsubsection}{\numberline {6.8.3}Associativity}{19}
+\contentsline {subsubsection}{\numberline {6.8.4}Access Type}{19}
+\contentsline {subsection}{\numberline {6.9}Advance Caches}{19}
+\contentsline {section}{\numberline {7}Virtual Memory}{19}
+\contentsline {subsection}{\numberline {7.1}Virtual Address Format}{19}
+\contentsline {subsection}{\numberline {7.2}Page Table Entry Format}{19}
+\contentsline {subsection}{\numberline {7.3}Example}{19}
+\contentsline {section}{\numberline {8}Multi-Cycle CPU Design}{20}
+\contentsline {section}{\numberline {9}Pipeline CPU Design}{20}
