@@ -1,6 +1,9 @@
 \documentclass[11pt]{article}
-
+\usepackage{float}
 \usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{caption}
 
 \title{Computer Architecture (ECS 154A) Study Guide}
 \author{Davis Computer Science Club --- Tutoring Committee}
@@ -10,17 +13,112 @@
 
 \maketitle
 
-\section{Logical Expressions}
+\section{Boolean Algebra}
 
 \subsection{Operations}
 
-\subsection{Truth Table}
-
-\subsection{Boolean Algebra}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c | c | c}
+		Operation	&	Symbol			&	Example\\
+		\hline
+		NOT			&	\( \bar{ } \)	&	\( \bar{A} \)\\
+					&	\( ! \)			&	\( !A \)\\
+					&	\( \neg \)		&	\( \neg A \)\\
+					&	\( \sim \)		&	\( \sim A \)\\
+		\hline
+		AND			&	\( \wedge \)	&	\( A \wedge B \)\\
+					&	\( * \)			&	\( A * B \)\\
+					&					&	\( AB \)\\
+		\hline
+		OR			&	\( \vee \)		&	\( A \vee B \)\\
+					&	\( + \)			&	\( A + B\)\\
+		\hline
+		XOR			&	\( \oplus \)	&	\( A \oplus B \)
+	\end{tabular}
+\end{table}
 
 \subsection{Equivalence Laws}
 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l | l | l}
+		Name			&	OR Version										&	AND Version\\
+		\hline
+		Commutative		&	\( A + B  = B + A \)							&	\( A * B = B * A \)\\
+		Associative		&	\( (A + B) + C = A + (B + C) \)					&	\( (A * B) * C = A * (B * C) \)\\
+		Distributive	&	\( A + (B * C) = (A + B) * (A + C) \)			&	\( A * (B + C) = (A * B) + (A * C) \)\\
+		Identity		&	\( A + 0 = A \)									&	\( A * 1 = A \)\\
+		Annulment		&	\( A + 1 = 1 \)									&	\( A * 0 = 0 \)\\
+		Idempotent		&	\( A + A = A \)									&	\( A * A = A \)\\
+		Complement		&	\( A + \bar{A} = 1 \)							&	\( A * \bar{A} = 0 \)\\
+		De Morgan's		&	\( \overline{(A + B)} = \bar{A} * \bar{B} \)	&	\( \overline{(A * B)} = \bar{A} + \bar{B} \)
+	\end{tabular}
+\end{table}
+
+\subsection{Truth Table}
+
+Truth tables are mathematical tables composing of every combination of inputs and the resulting function. The number of combinations or rows in the truth table is \( 2^N \), where N is the number of inputs.
+
+\subsubsection{NOT}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c | c}
+		A	&	\( f(A) = !A \)\\
+		\hline
+		0	&	1\\
+		1	&	0
+	\end{tabular}
+\end{table}
+
+\subsubsection{AND}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c | c}
+		A	&	B	&	\( f(A,B) = A * B \)\\
+		\hline
+		0	&	0	&	0\\
+		0	&	1	&	0\\
+		1	&	0	&	0\\
+		1	&	1	&	1
+	\end{tabular}
+\end{table}
+
+\subsubsection{OR}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c | c}
+		A	&	B	&	\( f(A,B) = A + B \)\\
+		\hline
+		0	&	0	&	0\\
+		0	&	1	&	1\\
+		1	&	0	&	1\\
+		1	&	1	&	1
+	\end{tabular}
+\end{table}
+
+\subsubsection{XOR}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c | c}
+		A	&	B	&	\( f(A,B) = A \oplus B \)\\
+		\hline
+		0	&	0	&	0\\
+		0	&	1	&	1\\
+		1	&	0	&	1\\
+		1	&	1	&	0
+	\end{tabular}
+\end{table}
+
+\subsection{Canonical Normal Form}
+
 \subsection{Karnaugh Maps}
+
+\subsection{Quine-McClucksey Algorithm}
 
 \section{Combinational Logic Circuits}
 
@@ -53,6 +151,88 @@
 \section{Single Cycle CPU Design}
 
 \section{Cache}
+
+Effectiveness is based on the concept of information reuse: temporal locality and spatial locality.
+
+\subsection{Memory Hierarchy}
+
+Goal: Make memory perform as if it was made of the most expensive and fastest type, but cost as if made of the cheapest type.
+
+\begin{enumerate}
+	\item Fast, Hot, Expensive
+	\item Static RAM
+	\item Dynamic RAM
+	\item Disk
+\end{enumerate}
+
+\noindent A cache is smaller than main memory and is composed of numerous cache lines. Cache lines consist of a dirty bit, a tag, and block(s) of data. If the dirty bit is on, then it signals the CPU to write the data from this cache line into main memory when this cache line is freed.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| c | c | c |}
+		\hline
+		Dirty Bit	&	\hspace{.5cm} Tag \hspace{.5cm} 		&	\hspace{1cm} Block(s) \hspace{1cm} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsection{Direct Mapped Cache}
+
+A given address is partitioned into three components: Tag, line number, and offset. The line number directly accesses a specific cache line. It then compares the tag partitioned from the address to the tag stored in the cache line. If the tags match, then it is a cache hit. Otherwise, it becomes a cache miss. Assuming that it was a cache hit, it then proceeds to use the offset to select which block to read or write. The block of data in the cache line can be thought of as an array and the offset as an index into this ``array".
+
+\subsubsection{Format}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| c | c | c |}
+		\hline
+		Tag		&	Line Number		&		 Offset\\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsubsection{Example}
+
+\textbf{A CPU is using 24-bit addresses and is byte-addressable. Each line in cache holds 16 bytes of data and each block is 1 byte. Assuming that the tag is 12 bits wide, find the following: number of lines in cache, size of cache, size of tag, and sizes of each partition in the format.}
+
+\[
+\text{Size(Cache Line)} = 16 \text{ bytes}
+\]
+\begin{eqnarray*}
+	\text{Offset} &=& \text{Number of bits needed to address 16 blocks}\\
+		&=& \log_2 16\\
+		&=& 4 \text{ bits}
+\end{eqnarray*}
+\begin{eqnarray*}
+\text{Bit\_Width(Line Number)} &=& \text{Size(Address)} - \text{Bit\_Width(Tag)} - \text{Bit\_Width(Offset)}\\
+	&=& 24 \text{ bits} - 12 \text{ bits} - 4 \text{ bits}\\
+	&=& 8 \text{ bits}
+\end{eqnarray*}
+\begin{eqnarray*}
+	\text{Number of Cache Lines} &=& 2^\text{Bit\_Width(Line Number)}\\
+		&=& 2^8\\
+		&=& 256
+\end{eqnarray*}
+\begin{eqnarray*}
+	\text{Size of Cache} &=& \text{Number of Cache Lines} * \text{Size of Cache Lines}\\
+		&=& 2^8 * 2^4\\
+		&=& 2048 \text{ bytes}\\
+		&=& 2 \text{ KB}
+\end{eqnarray*}
+
+\begin{table}[H]
+	\centering
+	\caption*{Format Partition Sizes and Bit Range}
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+					&	Tag		&	Line Number		&	Offset\\
+		\hline
+		Size		&	12 bits	&	8 bits			&	4 bits\\
+		\hline
+		Bit Range	&	Bits 12-23	&	Bits 4-11	&	Bits 0-3\\
+		\hline
+	\end{tabular}
+\end{table}
 
 \section{Virtual Memory}
 
