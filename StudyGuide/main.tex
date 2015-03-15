@@ -165,13 +165,13 @@ Goal: Make memory perform as if it was made of the most expensive and fastest ty
 	\item Disk
 \end{enumerate}
 
-\noindent A cache is smaller than main memory and is composed of numerous cache lines. Cache lines consist of a dirty bit, a tag, and block(s) of data. If the dirty bit is on, then it signals the CPU to write the data from this cache line into main memory when this cache line is freed.
+\noindent A cache is smaller than main memory and is composed of numerous cache lines. Cache lines consist of a dirty bit, a tag, and block(s) of data. If the dirty bit is on, then it signals the CPU to write the data from this cache line into main memory when this cache line is freed. Caches also contain a valid bit which signifies whether there is loaded data into the cache --- imagine starting up the computer for the first time, the cache is going to be empty. The issue is that even when a cache is empty (bits are all 0), it still holds some signal. As we continue, when we mention the size of a cache line, we refer to the size of the data blocks in the cache line only (excluding flags and tag).
 
 \begin{table}[H]
 	\centering
 	\begin{tabular}{| c | c | c |}
 		\hline
-		Dirty Bit	&	\hspace{.5cm} Tag \hspace{.5cm} 		&	\hspace{1cm} Block(s) \hspace{1cm} \\
+		Flags	&	\hspace{.5cm} Tag \hspace{.5cm} 		&	\hspace{1cm} Block(s) \hspace{1cm} \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -199,7 +199,7 @@ A given address is partitioned into three components: Tag, line number, and offs
 \text{Size(Cache Line)} = 16 \text{ bytes}
 \]
 \begin{eqnarray*}
-	\text{Offset} &=& \text{Number of bits needed to address 16 blocks}\\
+	\text{Bit\_Width(Offset)} &=& \text{Number of bits needed to address 16 blocks}\\
 		&=& \log_2 16\\
 		&=& 4 \text{ bits}
 \end{eqnarray*}
@@ -233,6 +233,57 @@ A given address is partitioned into three components: Tag, line number, and offs
 		\hline
 	\end{tabular}
 \end{table}
+
+\subsection{Fully Associative}
+
+A given address is partitioned into two components: Tag and offset. The reason why a line number is unused is because the CPU will perform a linear search through all cache lines looking for either a cache hit, an unused cache line, or a cache line to replace. Because of this, using full association has the lowest miss rates. The tag and offset performs the same as the tag and offset in direct mapping.
+
+
+\subsubsection{Format}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| c | c |}
+		\hline
+		Tag			&		 Offset\\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsubsection{Example}
+
+\textbf{A CPU is using 11-bit addresses and is byte-addressable. The cache size is 128 bytes and the size of each cache line is 8 bytes. Find the following: Bit width of offset, bit width of tag, number of cache lines, and sizes and bit ranges of the partitions.}
+
+\begin{eqnarray*}
+	\text{Bit\_Width(Offset)} &=& \text{Number of bits needed to address 8 blocks}\\
+	&=& \log_2 8\\
+	&=& 3 \text{ bits}
+\end{eqnarray*}
+\begin{eqnarray*}
+	\text{Bit\_Width(Tag)} &=& \text{Size(Address)} - \text{Bit\_Width(Offset)}\\
+	&=& 11 \text{ bits} - 3 \text{ bits}\\
+	&=& 8 \text{ bits}
+\end{eqnarray*}
+\begin{eqnarray*}
+	\text{Number of Cache Lines} &=& \text{Size(Cache)} / \text{Size(Cache Line)}\\
+	&=& 128 \text{ bytes} / 8 \text{ bytes}\\
+	&=& 16 \text{ Cache Lines}
+\end{eqnarray*}
+
+\begin{table}[H]
+	\centering
+	\caption*{Format Partition Sizes and Bit Range}
+	\begin{tabular}{| c | c | c |}
+		\hline
+		&	Tag		&	Offset\\
+		\hline
+		Size		&	8 bits		&	3 bits\\
+		\hline
+		Bit Range	&	Bits 3-10	&	Bits 0-2\\
+		\hline
+	\end{tabular}
+\end{table}
+
 
 \section{Virtual Memory}
 
