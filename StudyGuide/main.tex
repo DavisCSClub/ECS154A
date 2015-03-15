@@ -229,10 +229,12 @@ A given address is partitioned into three components: Tag, line number, and offs
 		\hline
 		Size		&	12 Bits	&	8 Bits			&	4 Bits\\
 		\hline
-		Bit Range	&	Bits 12-23	&	Bits 4-11	&	Bits 0-3\\
+		Bit Range	&	[12,23]	&	[4,11]	&	[0,3]\\
 		\hline
 	\end{tabular}
 \end{table}
+
+\noindent The bit range represents what bits that partition occupies. Ex: Offset occupies bits 0, 1, 2, and 3. The four least-significant bits.
 
 \subsection{Fully Associative}
 
@@ -279,7 +281,7 @@ A given address is partitioned into two components: Tag and offset. The reason w
 		\hline
 		Size		&	8 Bits		&	3 Bits\\
 		\hline
-		Bit Range	&	Bits 3-10	&	Bits 0-2\\
+		Bit Range	&	[3,10]	&	[0,2]\\
 		\hline
 	\end{tabular}
 \end{table}
@@ -343,7 +345,7 @@ Set associative caching is a hybrid between direct-mapped and fully associative.
 		\hline
 		Size			&	12 Bits		&	5 Bits		&	10 Bits\\
 		\hline
-		Bit Range		&	Bits 15-63		&	Bits 10-14		&	Bits 0-9\\
+		Bit Range		&	[15,63]		&	[10,14]		&	[0,9]\\
 		\hline
 	\end{tabular}
 \end{table}
