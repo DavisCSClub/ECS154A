@@ -10,6 +10,7 @@
 \date{Winter Quarter 2015}
 
 \usepackage{tikz}
+\usetikzlibrary{arrows}
 \usetikzlibrary{matrix,calc}
 
 %isolated term
@@ -687,7 +688,87 @@ It can actually be noted that direct-mapped caching and fully associative cachin
 
 \noindent Suppose that our cache has N lines and we use an N-way set associative cache. This implies that there is a single set with N lines. Recall the format of the set associative --- tag, set number, and offset. If there is only one set, how many bits are required to represent one set. \( \log_2 1 = 0 \). Therefore, there is no need for any bits to represent that one set. In this case, the format becomes -- tag and offset. Also, recall that in set associative, it first uses the set number to access a specific set and then performs a linear search among the cache lines within that set. Since there is only one set, it performs the linear search over that entire set by default. Therefore, an N-way set associative cache is also a fully associative cache.
 
-\subsection{Cache Properties}
+\subsection{Access Types}
+
+Assuming that the CPU uses virtual addresses, the translation look-aside buffer (TLB) is used as a cache of recent virtual to physical translations. There are four components needed to keep in consideration: The CPU, TLB, Cache, and RAM. RAM must be accessed using physical addresses, but the three other components may use virtual addresses.
+
+\subsubsection{Physically Addressed Cache}
+
+In physically address caches, the CPU sends a virtual address to the translation look-aside buffer and converts it immediately to a physical address. This physical address is then used to access the cache. On a cache miss, the physical address will be used immediately into RAM. It is important to note that to access cache, it must always go through the translation look-aside buffer. This implies that a physically addressed may run slower, but is safer.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4cm,
+	thick,main node/.style={circle,draw}]
+	
+	\node[main node] (0) {CPU};
+	\node[main node] (1) [right of=0] {TLB};
+	\node[main node] (2) [below of=1] {\LARGE\$};
+	\node[main node] (3) [right of=2] {RAM};
+	
+	\path[every node/.style={font=\sffamily\small}]
+	(0) edge node[] {virtual address} (1)
+	(1) edge node[] {physical address} (2)
+	(2) edge node[] {physical address} (3);
+	\end{tikzpicture}
+\end{figure}
+
+\subsubsection{Virtually Addressed Cache}
+
+In a virtually address cache, the CPU accesses cache immediately with the virtual address. On cache-hit, it returns the block of data. On cache-miss, however, the virtual address is sent to the translation look-aside buffer and converted to a physical address. The physical address is then used to access RAM. Since the translation look-aside buffer is not always accessed, virtually addressed caches are faster in the average case. However, there are quite a few issues with a virtually addressed cache. Whenever there is a context switch, the entire cache may need to be flushed --- two processes may use the same virtual address, but their contents are completely different. 
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4cm,
+	thick,main node/.style={circle,draw}]
+	
+	\node[main node] (0) {CPU};
+	\node[main node] (1) [right of=0] {\LARGE\$};
+	\node[main node] (2) [below of=1] {TLB};
+	\node[main node] (3) [right of=2] {RAM};
+	
+	\path[every node/.style={font=\sffamily\small}]
+	(0) edge node[] {virtual address} (1)
+	(1) edge node[] {virtual address} (2)
+	(2) edge node[] {physical address} (3);
+	\end{tikzpicture}
+\end{figure}
+
+\subsection{Cache Miss Classification}
+
+\subsubsection{Compulsory}
+
+For a compulsory miss, it means that the data was never seen before. A simple example of this is when the CPU first starts and the cache is empty. Any data accessed will have never been seen before.
+
+\subsubsection{Capacity}
+
+For a capacity miss, it means that the cache cannot contain all blocks for which the program requires. Blocks are being swapped in and out constantly.
+
+\subsubsection{Conflict}
+
+For a conflict miss, it pertains to the mapping strategy used. Take for example direct-mapped caches. If all addresses used in the program only accessed one cache line because of the partition bit range, it means that one cache line will be constantly changing while other cache lines are unused.
+
+\subsubsection{Coherence}
+
+Coherence misses come from false sharing due to multi-processors. Suppose there are two processors, each of which has loaded the same block into their cache. Now if one processor updates that block in its own cache, it invalidates the other processor's block. 
+
+\subsection{Fundamental Cache Parameters}
+
+\subsubsection{Cache Size}
+
+Larger caches produces lower miss rates, but also longer access times.
+
+\subsubsection{Block Size}
+
+Small block sizes do not exploit the locality principle and it does not help with compulsory misses.  Larger block sizes, however, may pollute the cache in that it may be grabbing more chunks than necessary. These extra chunks become useless and occupy cache space.
+
+\subsubsection{Associativity}
+
+Larger associativity reduces miss rates, but it becomes slower and harder to build.
+
+\subsubsection{Access Type}
+
+Virtually addressed caches provide lower access times, but on context-switches will require the entire cache to be flushed. Physically addressed caches do not have issues with context switches, but increases it access time as it needs to be go through the translation look-aside buffer each time.
 
 \subsection{Advance Caches}
 
