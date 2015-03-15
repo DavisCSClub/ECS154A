@@ -227,7 +227,7 @@ A given address is partitioned into three components: Tag, line number, and offs
 		\hline
 					&	Tag		&	Line Number		&	Offset\\
 		\hline
-		Size		&	12 bits	&	8 bits			&	4 bits\\
+		Size		&	12 Bits	&	8 Bits			&	4 Bits\\
 		\hline
 		Bit Range	&	Bits 12-23	&	Bits 4-11	&	Bits 0-3\\
 		\hline
@@ -277,7 +277,7 @@ A given address is partitioned into two components: Tag and offset. The reason w
 		\hline
 		&	Tag		&	Offset\\
 		\hline
-		Size		&	8 bits		&	3 bits\\
+		Size		&	8 Bits		&	3 Bits\\
 		\hline
 		Bit Range	&	Bits 3-10	&	Bits 0-2\\
 		\hline
@@ -301,7 +301,7 @@ Set associative caching is a hybrid between direct-mapped and fully associative.
 
 \subsubsection{Example}
 
-\textbf{A CPU is using 64-bit addresses and is byte-addressable. It also uses a 3-way set associative cache with a cache size of 98,304 bytes and 32 sets. Find the following: Number of lines per set, size of each set, size of cache line, number of cache lines, bit width of offset, bit width of set number, bit width of tag, and partition sizes and bit ranges.}
+\textbf{A CPU is using 64-bit addresses and is byte-addressable. It also uses a 3-way set associative cache with a cache size of 98,304 bytes and 32 sets. Find the following: Number of lines per set, size of each set, size of cache line, bit width of offset, bit width of set number, bit width of tag, and partition sizes and bit ranges.}
 
 \[
 	\text{Number of Lines per Set} = 3 \text{ (Given)}
@@ -312,29 +312,42 @@ Set associative caching is a hybrid between direct-mapped and fully associative.
 		&=& 3072 \text{ bytes}
 \end{eqnarray*}
 \begin{eqnarray*}
-	\text{Size(Cache Line)} &=& \text{Size(Set)} / \text{Number of lines per set}\\
-	&=& 11 \text{ bits} - 3 \text{ bits}\\
-	&=& 8 \text{ bits}
+	\text{Size(Cache Line)} &=& \text{Size(Set)} / \text{ Number of lines per set}\\
+	&=& 3072 \text{ bytes} / 3\\
+	&=& 1024 \text{ bytes}
 \end{eqnarray*}
 \begin{eqnarray*}
-	\text{Number of Cache Lines} &=& \text{Size(Cache)} / \text{Size(Cache Line)}\\
-	&=& 128 \text{ bytes} / 8 \text{ bytes}\\
-	&=& 16 \text{ Cache Lines}
+	\text{Bit\_Width(Offset)} &=& \text{Number of bits needed to represent 1024 bytes}\\
+	&=& \log_2 \text{Size(Cache Line)}\\
+	&=& \log_2 1024\\
+	&=& 10 \text{ bits}
+\end{eqnarray*}
+\begin{eqnarray*}
+	\text{Bit\_Width(Set Number)} &=& \text{Number of bits needed to represent 32 sets}\\
+	&=& \log_2 \text{Number of sets}\\
+	&=& \log_2 32\\
+	&=& 5 \text{ bits}
+\end{eqnarray*}
+\begin{eqnarray*}
+	\text{Bit\_Width(Tag)} &=& \text{Size(Address)} - \text{Bit\_Width(Set Number)} - \text{Bit\_Width(Offset)}\\
+	&=& 64 \text{ bits} - 5 \text{ bits} - 10 \text{ bits}\\
+	&=& 49 \text{ bits}
 \end{eqnarray*}
 
 \begin{table}[H]
 	\centering
 	\caption*{Format Partition Sizes and Bit Range}
-	\begin{tabular}{| c | c | c |}
+	\begin{tabular}{| c | c | c | c |}
 		\hline
-		&	Tag		&	Offset\\
+					&	Tag		&	Set Number		&	Offset\\
 		\hline
-		Size		&	8 bits		&	3 bits\\
+		Size			&	12 Bits		&	5 Bits		&	10 Bits\\
 		\hline
-		Bit Range	&	Bits 3-10	&	Bits 0-2\\
+		Bit Range		&	Bits 15-63		&	Bits 10-14		&	Bits 0-9\\
 		\hline
 	\end{tabular}
 \end{table}
+
 
 \section{Virtual Memory}
 
