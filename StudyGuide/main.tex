@@ -688,6 +688,28 @@ It can actually be noted that direct-mapped caching and fully associative cachin
 
 \noindent Suppose that our cache has N lines and we use an N-way set associative cache. This implies that there is a single set with N lines. Recall the format of the set associative --- tag, set number, and offset. If there is only one set, how many bits are required to represent one set. \( \log_2 1 = 0 \). Therefore, there is no need for any bits to represent that one set. In this case, the format becomes -- tag and offset. Also, recall that in set associative, it first uses the set number to access a specific set and then performs a linear search among the cache lines within that set. Since there is only one set, it performs the linear search over that entire set by default. Therefore, an N-way set associative cache is also a fully associative cache.
 
+\subsection{Replacement Strategies}
+
+\begin{itemize}
+	\item Least Recently Used (LRU)
+ 	\item First-In, First-Out (FIFO)
+ 	\item Last-In, First-Out (LIFO)
+ 	\item Random
+ 	\item Most Recently Used (MRU)
+\end{itemize}
+
+\subsubsection{Least Recently Used (LRU)}
+
+Each cache line is required to contain ``age bits". The least recently used cache line is tracked through these age bits. Every time a cache line is used, the age bits of all other cache lines change.
+
+\subsection{First-In, First-Out (FIFO)}
+
+Requires a queue to store references to the cache lines. Oldest cache line will be the first to be discarded.
+
+\subsubsection{Most Recently Used (MRU)}
+
+Opposite of least recently used. Most useful for situations where there is a positive correlation between the age of data and probability of access.
+
 \subsection{Access Types}
 
 Assuming that the CPU uses virtual addresses, the translation look-aside buffer (TLB) is used as a cache of recent virtual to physical translations. There are four components needed to keep in consideration: The CPU, TLB, Cache, and RAM. RAM must be accessed using physical addresses, but the three other components may use virtual addresses.
@@ -771,6 +793,15 @@ Larger associativity reduces miss rates, but it becomes slower and harder to bui
 Virtually addressed caches provide lower access times, but on context-switches will require the entire cache to be flushed. Physically addressed caches do not have issues with context switches, but increases it access time as it needs to be go through the translation look-aside buffer each time.
 
 \subsection{Advance Caches}
+
+\begin{itemize}
+	\item Small and Simple Cache
+	\item Way Prediction Cache
+	\item Pseudo Association Cache
+	\item Non-Blocking Cache
+	\item Multi-Bank Cache
+	\item Critical Word First Cache
+\end{itemize}
 
 \section{Virtual Memory}
 
