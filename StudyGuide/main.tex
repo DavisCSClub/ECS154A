@@ -120,6 +120,26 @@ Truth tables are mathematical tables composing of every combination of inputs an
 	\end{tabular}
 \end{table}
 
+\subsubsection{Example}
+
+\textbf{Create a function that takes three inputs --- x2, x1, x0 --- and produces a high or on signal when only two input signals are on.}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c | c}
+		x2	&	x1	&	x0	&	\( f(x2,x1,x0) \)\\
+		\hline
+		0	&	0	&	0	&	0\\
+		0	&	0	&	1	&	0\\
+		0	&	1	&	0	&	0\\
+		0	&	1	&	1	&	1\\
+		1	&	0	&	0	&	0\\
+		1	&	0	&	1	&	1\\
+		1	&	1	&	0	&	1\\
+		1	&	1	&	1	&	0
+	\end{tabular}
+\end{table}
+
 \subsection{Canonical Normal Form}
 
 \subsection{Karnaugh Maps}
@@ -361,6 +381,10 @@ Set associative caching is a hybrid between direct-mapped and fully associative.
 It can actually be noted that direct-mapped caching and fully associative caching are a form of set associative cache. Suppose that our cache has N lines and we use an 1-way set associative cache. In this scenario, it would imply that each set consists of one cache line. This would mean that the set number is the exact same as a line number. Therefore, 1-way set associative caches are also direct mapped caches.
 
 \noindent Suppose that our cache has N lines and we use an N-way set associative cache. This implies that there is a single set with N lines. Recall the format of the set associative --- tag, set number, and offset. If there is only one set, how many bits are required to represent one set. \( \log_2 1 = 0 \). Therefore, there is no need for any bits to represent that one set. In this case, the format becomes -- tag and offset. Also, recall that in set associative, it first uses the set number to access a specific set and then performs a linear search among the cache lines within that set. Since there is only one set, it performs the linear search over that entire set by default. Therefore, an N-way set associative cache is also a fully associative cache.
+
+\subsection{Cache Properties}
+
+\subsection{Advance Caches}
 
 \section{Virtual Memory}
 
