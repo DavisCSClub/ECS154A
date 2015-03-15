@@ -13,37 +13,37 @@
 \contentsline {subsection}{\numberline {1.5}Canonical Conjunctive Normal Form}{6}
 \contentsline {subsubsection}{\numberline {1.5.1}Maxterm}{6}
 \contentsline {subsubsection}{\numberline {1.5.2}Example}{6}
-\contentsline {subsection}{\numberline {1.6}Karnaugh Maps}{6}
-\contentsline {subsection}{\numberline {1.7}Quine-McClucksey Algorithm}{6}
-\contentsline {section}{\numberline {2}Combinational Logic Circuits}{6}
-\contentsline {subsection}{\numberline {2.1}Gates}{6}
-\contentsline {subsection}{\numberline {2.2}Timing Diagrams}{6}
-\contentsline {subsection}{\numberline {2.3}Multiplexers, Decoders, Shifters}{6}
-\contentsline {subsection}{\numberline {2.4}Adders and Subtracters}{6}
-\contentsline {subsection}{\numberline {2.5}Designing Combinational Logic Circuits}{6}
-\contentsline {section}{\numberline {3}Finite State Automata}{6}
-\contentsline {subsection}{\numberline {3.1}Moore Model}{6}
-\contentsline {subsection}{\numberline {3.2}Mealy Model}{6}
-\contentsline {section}{\numberline {4}Sequential Logic Circuit}{6}
-\contentsline {subsection}{\numberline {4.1}Latches}{6}
-\contentsline {subsection}{\numberline {4.2}Flip Flops}{6}
-\contentsline {subsection}{\numberline {4.3}Registers and Counters}{6}
-\contentsline {subsection}{\numberline {4.4}Designing Sequential Logic Circuits}{6}
-\contentsline {section}{\numberline {5}Single Cycle CPU Design}{6}
-\contentsline {section}{\numberline {6}Cache}{6}
-\contentsline {subsection}{\numberline {6.1}Memory Hierarchy}{6}
-\contentsline {subsection}{\numberline {6.2}Direct Mapped Cache}{7}
-\contentsline {subsubsection}{\numberline {6.2.1}Format}{7}
-\contentsline {subsubsection}{\numberline {6.2.2}Example}{7}
-\contentsline {subsection}{\numberline {6.3}Fully Associative}{8}
-\contentsline {subsubsection}{\numberline {6.3.1}Format}{8}
-\contentsline {subsubsection}{\numberline {6.3.2}Example}{8}
-\contentsline {subsection}{\numberline {6.4}Set Associative}{9}
-\contentsline {subsubsection}{\numberline {6.4.1}Format}{9}
-\contentsline {subsubsection}{\numberline {6.4.2}Example}{9}
-\contentsline {subsubsection}{\numberline {6.4.3}Associativity Remarks}{10}
-\contentsline {subsection}{\numberline {6.5}Cache Properties}{10}
-\contentsline {subsection}{\numberline {6.6}Advance Caches}{10}
-\contentsline {section}{\numberline {7}Virtual Memory}{10}
-\contentsline {section}{\numberline {8}Multi-Cycle CPU Design}{10}
-\contentsline {section}{\numberline {9}Pipeline CPU Design}{10}
+\contentsline {subsection}{\numberline {1.6}Karnaugh Maps}{7}
+\contentsline {subsection}{\numberline {1.7}Quine-McClucksey Algorithm}{7}
+\contentsline {section}{\numberline {2}Combinational Logic Circuits}{7}
+\contentsline {subsection}{\numberline {2.1}Gates}{7}
+\contentsline {subsection}{\numberline {2.2}Timing Diagrams}{7}
+\contentsline {subsection}{\numberline {2.3}Multiplexers, Decoders, Shifters}{7}
+\contentsline {subsection}{\numberline {2.4}Adders and Subtracters}{7}
+\contentsline {subsection}{\numberline {2.5}Designing Combinational Logic Circuits}{7}
+\contentsline {section}{\numberline {3}Finite State Automata}{7}
+\contentsline {subsection}{\numberline {3.1}Moore Model}{7}
+\contentsline {subsection}{\numberline {3.2}Mealy Model}{7}
+\contentsline {section}{\numberline {4}Sequential Logic Circuit}{7}
+\contentsline {subsection}{\numberline {4.1}Latches}{7}
+\contentsline {subsection}{\numberline {4.2}Flip Flops}{7}
+\contentsline {subsection}{\numberline {4.3}Registers and Counters}{7}
+\contentsline {subsection}{\numberline {4.4}Designing Sequential Logic Circuits}{7}
+\contentsline {section}{\numberline {5}Single Cycle CPU Design}{7}
+\contentsline {section}{\numberline {6}Cache}{7}
+\contentsline {subsection}{\numberline {6.1}Memory Hierarchy}{7}
+\contentsline {subsection}{\numberline {6.2}Direct Mapped Cache}{8}
+\contentsline {subsubsection}{\numberline {6.2.1}Format}{8}
+\contentsline {subsubsection}{\numberline {6.2.2}Example}{8}
+\contentsline {subsection}{\numberline {6.3}Fully Associative}{9}
+\contentsline {subsubsection}{\numberline {6.3.1}Format}{9}
+\contentsline {subsubsection}{\numberline {6.3.2}Example}{9}
+\contentsline {subsection}{\numberline {6.4}Set Associative}{10}
+\contentsline {subsubsection}{\numberline {6.4.1}Format}{10}
+\contentsline {subsubsection}{\numberline {6.4.2}Example}{10}
+\contentsline {subsubsection}{\numberline {6.4.3}Associativity Remarks}{11}
+\contentsline {subsection}{\numberline {6.5}Cache Properties}{11}
+\contentsline {subsection}{\numberline {6.6}Advance Caches}{11}
+\contentsline {section}{\numberline {7}Virtual Memory}{11}
+\contentsline {section}{\numberline {8}Multi-Cycle CPU Design}{11}
+\contentsline {section}{\numberline {9}Pipeline CPU Design}{11}
