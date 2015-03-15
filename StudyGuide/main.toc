@@ -10,8 +10,11 @@
 \contentsline {subsection}{\numberline {1.4}Canonical Disjunctive Normal Form}{4}
 \contentsline {subsubsection}{\numberline {1.4.1}Minterm}{4}
 \contentsline {subsubsection}{\numberline {1.4.2}Example}{5}
-\contentsline {subsection}{\numberline {1.5}Karnaugh Maps}{6}
-\contentsline {subsection}{\numberline {1.6}Quine-McClucksey Algorithm}{6}
+\contentsline {subsection}{\numberline {1.5}Canonical Conjunctive Normal Form}{6}
+\contentsline {subsubsection}{\numberline {1.5.1}Maxterm}{6}
+\contentsline {subsubsection}{\numberline {1.5.2}Example}{6}
+\contentsline {subsection}{\numberline {1.6}Karnaugh Maps}{6}
+\contentsline {subsection}{\numberline {1.7}Quine-McClucksey Algorithm}{6}
 \contentsline {section}{\numberline {2}Combinational Logic Circuits}{6}
 \contentsline {subsection}{\numberline {2.1}Gates}{6}
 \contentsline {subsection}{\numberline {2.2}Timing Diagrams}{6}

@@ -167,7 +167,7 @@ The canonical disjunctive normal form is also known as a minterm, typically repr
 	\end{tabular}
 \end{table}
 
-\noindent For a given function, \( f \), it is possible to write the function as a ``sum of products". This is a special form of the canonical normal form in that it only includes values such that it makes the function logically true.
+\noindent For a given function, \( f \), it is possible to express the function as a ``sum of products". This is a special form of the canonical normal form in that it only includes values such that it makes the function logically true.
 
 \subsubsection{Example}
 
@@ -190,6 +190,12 @@ The canonical disjunctive normal form is also known as a minterm, typically repr
 \end{table}
 
 \[ f(x_2,x_1,x_0) = m_3 + m_5 + m_6 \]
+
+\subsection{Canonical Conjunctive Normal Form}
+
+\subsubsection{Maxterm}
+
+\subsubsection{Example}
 
 \subsection{Karnaugh Maps}
 
@@ -427,7 +433,7 @@ Set associative caching is a hybrid between direct-mapped and fully associative.
 
 \subsubsection{Associativity Remarks}
 
-It can actually be noted that direct-mapped caching and fully associative caching are a form of set associative cache. Suppose that our cache has N lines and we use an 1-way set associative cache. In this scenario, it would imply that each set consists of one cache line. This would mean that the set number is the exact same as a line number. Therefore, 1-way set associative caches are also direct mapped caches.
+It can actually be noted that direct-mapped caching and fully associative caching are a form of set associative cache. Suppose that our cache has N lines and we use an 1-way set associative cache. In this scenario, it would imply that each set consists of one cache line. This would mean that the set number is the exact same as a line number. Therefore, 1-way set associative caches are also direct mapped caches.\\
 
 \noindent Suppose that our cache has N lines and we use an N-way set associative cache. This implies that there is a single set with N lines. Recall the format of the set associative --- tag, set number, and offset. If there is only one set, how many bits are required to represent one set. \( \log_2 1 = 0 \). Therefore, there is no need for any bits to represent that one set. In this case, the format becomes -- tag and offset. Also, recall that in set associative, it first uses the set number to access a specific set and then performs a linear search among the cache lines within that set. Since there is only one set, it performs the linear search over that entire set by default. Therefore, an N-way set associative cache is also a fully associative cache.
 
