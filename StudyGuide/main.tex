@@ -140,7 +140,56 @@ Truth tables are mathematical tables composing of every combination of inputs an
 	\end{tabular}
 \end{table}
 
-\subsection{Canonical Normal Form}
+\subsection{Canonical Disjunctive Normal Form}
+
+\subsubsection{Minterm}
+
+The canonical disjunctive normal form is also known as a minterm, typically represented by a lower case `m'. A minterm is a logical product term such that it uses each input variable once and it uses only the complement operator and conjunction operation. In other words, if there are n input variables, the minterm must keep to the following constraints: 
+\begin{enumerate}
+	\item be a logical product
+	\item use each of the n variables once
+	\item only use NOT operators and AND operators
+\end{enumerate}
+
+\noindent For three inputs, the minterms are as follows:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c  c}
+		\( m_0 \)	&	\( \bar{x_2} \bar{x_1} \bar{x_0} \) \\
+		\( m_1 \)	&	\( \bar{x_2} \bar{x_1} x_0 \) \\
+		\( m_2 \)	&	\( \bar{x_2} x_1 \bar{x_0} \) \\
+		\( m_3 \)	&	\( \bar{x_2} x_1 x_0 \) \\
+		\( m_4 \)	&	\( x_2 \bar{x_1} \bar{x_0} \) \\
+		\( m_5 \)	&	\( x_2 \bar{x_1} x_0 \) \\
+		\( m_6 \)	&	\( x_2 x_1 \bar{x_0} \) \\
+		\( m_7 \)	&	\( x_2 x_1 x_0 \) \\
+	\end{tabular}
+\end{table}
+
+\noindent For a given function, \( f \), it is possible to write the function as a ``sum of products". This is a special form of the canonical normal form in that it only includes values such that it makes the function logically true.
+
+\subsubsection{Example}
+
+\textbf{Create a function that takes three inputs --- x2, x1, x0 --- and produces a high or on signal when only two input signals are on. Express this function as a sum of products.}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c | c}
+				&	x2	&	x1	&	x0	&	\( f(x2,x1,x0) \)\\
+		\hline
+		\( m_0 \)	&	0	&	0	&	0	&	0\\
+		\( m_1 \)	&	0	&	0	&	1	&	0\\
+		\( m_2 \)	&	0	&	1	&	0	&	0\\
+		\( m_3 \)	&	0	&	1	&	1	&	1\\
+		\( m_4 \)	&	1	&	0	&	0	&	0\\
+		\( m_5 \)	&	1	&	0	&	1	&	1\\
+		\( m_6 \)	&	1	&	1	&	0	&	1\\
+		\( m_7 \)	&	1	&	1	&	1	&	0
+	\end{tabular}
+\end{table}
+
+\[ f(x_2,x_1,x_0) = m_3 + m_5 + m_6 \]
 
 \subsection{Karnaugh Maps}
 
