@@ -27,45 +27,45 @@
 \contentsline {section}{\numberline {3}Finite State Automata}{8}
 \contentsline {subsection}{\numberline {3.1}Moore Model}{8}
 \contentsline {subsection}{\numberline {3.2}Mealy Model}{8}
-\contentsline {section}{\numberline {4}Sequential Logic Circuit}{8}
-\contentsline {subsection}{\numberline {4.1}Latches}{8}
-\contentsline {subsection}{\numberline {4.2}Flip Flops}{8}
-\contentsline {subsection}{\numberline {4.3}Registers and Counters}{8}
-\contentsline {subsection}{\numberline {4.4}Designing Sequential Logic Circuits}{8}
-\contentsline {section}{\numberline {5}Single Cycle CPU Design}{8}
-\contentsline {section}{\numberline {6}Cache}{8}
-\contentsline {subsection}{\numberline {6.1}Memory Hierarchy}{8}
+\contentsline {section}{\numberline {4}Sequential Logic Circuit}{9}
+\contentsline {subsection}{\numberline {4.1}Latches}{9}
+\contentsline {subsection}{\numberline {4.2}Flip Flops}{9}
+\contentsline {subsection}{\numberline {4.3}Registers and Counters}{9}
+\contentsline {subsection}{\numberline {4.4}Designing Sequential Logic Circuits}{9}
+\contentsline {section}{\numberline {5}Single Cycle CPU Design}{9}
+\contentsline {section}{\numberline {6}Cache}{9}
+\contentsline {subsection}{\numberline {6.1}Memory Hierarchy}{9}
 \contentsline {subsection}{\numberline {6.2}Direct Mapped Cache}{9}
-\contentsline {subsubsection}{\numberline {6.2.1}Format}{9}
-\contentsline {subsubsection}{\numberline {6.2.2}Example}{9}
-\contentsline {subsection}{\numberline {6.3}Fully Associative}{10}
-\contentsline {subsubsection}{\numberline {6.3.1}Format}{10}
-\contentsline {subsubsection}{\numberline {6.3.2}Example}{10}
+\contentsline {subsubsection}{\numberline {6.2.1}Format}{10}
+\contentsline {subsubsection}{\numberline {6.2.2}Example}{10}
+\contentsline {subsection}{\numberline {6.3}Fully Associative}{11}
+\contentsline {subsubsection}{\numberline {6.3.1}Format}{11}
+\contentsline {subsubsection}{\numberline {6.3.2}Example}{11}
 \contentsline {subsection}{\numberline {6.4}Set Associative}{11}
-\contentsline {subsubsection}{\numberline {6.4.1}Format}{11}
-\contentsline {subsubsection}{\numberline {6.4.2}Example}{11}
-\contentsline {subsubsection}{\numberline {6.4.3}Associativity Remarks}{12}
-\contentsline {subsection}{\numberline {6.5}Replacement Strategies}{12}
+\contentsline {subsubsection}{\numberline {6.4.1}Format}{12}
+\contentsline {subsubsection}{\numberline {6.4.2}Example}{12}
+\contentsline {subsubsection}{\numberline {6.4.3}Associativity Remarks}{13}
+\contentsline {subsection}{\numberline {6.5}Replacement Strategies}{13}
 \contentsline {subsubsection}{\numberline {6.5.1}Least Recently Used (LRU)}{13}
 \contentsline {subsubsection}{\numberline {6.5.2}First-In, First-Out (FIFO)}{13}
 \contentsline {subsubsection}{\numberline {6.5.3}Most Recently Used (MRU)}{13}
 \contentsline {subsection}{\numberline {6.6}Access Types}{13}
-\contentsline {subsubsection}{\numberline {6.6.1}Physically Addressed Cache}{13}
-\contentsline {subsubsection}{\numberline {6.6.2}Virtually Addressed Cache}{13}
-\contentsline {subsection}{\numberline {6.7}Cache Miss Classification}{14}
-\contentsline {subsubsection}{\numberline {6.7.1}Compulsory}{14}
-\contentsline {subsubsection}{\numberline {6.7.2}Capacity}{14}
-\contentsline {subsubsection}{\numberline {6.7.3}Conflict}{14}
-\contentsline {subsubsection}{\numberline {6.7.4}Coherence}{14}
-\contentsline {subsection}{\numberline {6.8}Fundamental Cache Parameters}{14}
-\contentsline {subsubsection}{\numberline {6.8.1}Cache Size}{14}
+\contentsline {subsubsection}{\numberline {6.6.1}Physically Addressed Cache}{14}
+\contentsline {subsubsection}{\numberline {6.6.2}Virtually Addressed Cache}{14}
+\contentsline {subsection}{\numberline {6.7}Cache Miss Classification}{15}
+\contentsline {subsubsection}{\numberline {6.7.1}Compulsory}{15}
+\contentsline {subsubsection}{\numberline {6.7.2}Capacity}{15}
+\contentsline {subsubsection}{\numberline {6.7.3}Conflict}{15}
+\contentsline {subsubsection}{\numberline {6.7.4}Coherence}{15}
+\contentsline {subsection}{\numberline {6.8}Fundamental Cache Parameters}{15}
+\contentsline {subsubsection}{\numberline {6.8.1}Cache Size}{15}
 \contentsline {subsubsection}{\numberline {6.8.2}Block Size}{15}
 \contentsline {subsubsection}{\numberline {6.8.3}Associativity}{15}
 \contentsline {subsubsection}{\numberline {6.8.4}Access Type}{15}
-\contentsline {subsection}{\numberline {6.9}Advance Caches}{15}
-\contentsline {section}{\numberline {7}Virtual Memory}{15}
-\contentsline {subsection}{\numberline {7.1}Virtual Address Format}{15}
-\contentsline {subsection}{\numberline {7.2}Page Table Entry Format}{15}
-\contentsline {subsection}{\numberline {7.3}Example}{15}
-\contentsline {section}{\numberline {8}Multi-Cycle CPU Design}{16}
-\contentsline {section}{\numberline {9}Pipeline CPU Design}{16}
+\contentsline {subsection}{\numberline {6.9}Advance Caches}{16}
+\contentsline {section}{\numberline {7}Virtual Memory}{16}
+\contentsline {subsection}{\numberline {7.1}Virtual Address Format}{16}
+\contentsline {subsection}{\numberline {7.2}Page Table Entry Format}{16}
+\contentsline {subsection}{\numberline {7.3}Example}{16}
+\contentsline {section}{\numberline {8}Multi-Cycle CPU Design}{17}
+\contentsline {section}{\numberline {9}Pipeline CPU Design}{17}
