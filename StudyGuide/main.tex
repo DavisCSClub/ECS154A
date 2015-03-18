@@ -1057,8 +1057,8 @@ Virtually addressed caches provide lower access times, but on context-switches w
 
 \begin{eqnarray*}
 	\text{Number of Page Frames} &=& \text{Size(Physical Memory)} / \text{Size(Page)}\\
-		&=& 2^{30} \text{ bytes} / 2^{13} \text{ bytes}\\
-		&=& 2^{17} \text{ page frames}
+		&=& 2^{20} \text{ bytes} / 2^{13} \text{ bytes}\\
+		&=& 2^{7} \text{ page frames}
 \end{eqnarray*}
 \begin{eqnarray*}
 	\text{Bit\_Width(Offset)} &=& \text{Number of bits needed to reference 8 KB}\\
@@ -1072,14 +1072,14 @@ Virtually addressed caches provide lower access times, but on context-switches w
 		\hline
 				&	Virtual Page Number	&	Offset\\
 		\hline
-		Size	&	49 Bits	&	13 Bits\\
+		Size	&	17 Bits	&	13 Bits\\
 		\hline
 	\end{tabular}
 \end{table}
 \begin{eqnarray*}
 	\text{Number of Page Table Entries} &=& \text{Number of Virtual Pages}\\
 		&=& 2^{\text{Bit\_Width(Virtual Page Number)}}\\
-		&=& 2^{49}
+		&=& 2^{17}
 \end{eqnarray*}
 \begin{eqnarray*}
 	\text{Bit\_Width(Page Table Entry)} &=& \text{Number of needed to reference } 2^{17} \text{ page frames}\\
